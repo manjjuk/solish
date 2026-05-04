@@ -2,224 +2,172 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLISH | The 10-Layer Lexicon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solish | A Nationality of the Heart</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+        /* --- GLOBAL STYLE CONTROLS --- */
         :root {
-            --dict-blue: #003366; 
-            --dict-red: #b30000;  
-            --leaf-green: #2d5a27; 
-            /* Base64 subtle paper texture background */
-            --bg-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4uUzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABhlBMVEUAAADl5eXm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////09PTm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////z8/Po6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////19fXq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////29vbs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////39/ft7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+vs8PDz9/f3+/v7////S3+dbAAAAAnRSTlMAAQGU/ayfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABmklEQVRYw7XW23KCMBAF0EEERBy8IAoIeKugvVf7/3+mDSRAsSutZ76Z7M6eyZ6QpAghhIgsW7fXG872+z7I769IksfD4ZBeXmS5mE7R/YPk96O67vczWSw9CidA9vu57p8u8/1X/YfI0f2nK8v603173vWn+w+Rt67P61vW967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX967v6VvX98R5EUKIEPlH/gBeT1z3I0W57AAAAABJRU5ErkJggg==');
+            --main-font-family: 'Georgia', serif;
+            --base-font-size: 20px;
+            --title-font-size: 6rem;
+            --heading-font-size: 1.2rem;
+            --phonetic-font-size: 1.7rem;
+            --bg-color: #fdfcf0;
+            --text-color: #2c2c2c;
+            --accent-color: #7a8d7a; /* St. Alphege green */
+            --muted-color: #6c757d;
+            --espresso-dark: #3c2f2f; /* Foundation for the heritage shadow */
         }
 
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f4f1ea;
-            background-image: var(--bg-base64);
-            color: #222;
-            margin: 0;
-            padding: 60px 20px;
-            display: flex;
-            justify-content: center;
-            position: relative;
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: var(--main-font-family); 
+            font-size: var(--base-font-size);
+            line-height: 1.6;
         }
 
-        /* Top Right Email Link */
-        .contact-link {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.8rem;
-            text-decoration: none;
-            color: var(--leaf-green);
-            border: 1px solid var(--leaf-green);
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-link:hover {
-            background-color: var(--leaf-green);
+        .hero-section { 
+            /* Corrected URL syntax and path */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/solishheader.jpg"); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 140px 0; 
             color: white;
+            border-bottom: none;
         }
 
-        .dictionary-card {
-            max-width: 800px;
-            background: white;
-            padding: 50px;
-            border: 1px solid #d1d1d1;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        header {
-            border-bottom: 4px solid var(--leaf-green);
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 3.8rem;
-            margin: 0;
-            color: #1a1a1a;
-            letter-spacing: -1px;
-        }
-
-        .pronunciation {
-            font-family: 'Arial', sans-serif;
-            color: #666;
-            font-size: 1.2rem;
-            margin: 5px 0 15px 0;
-        }
-
-        .entry {
-            margin-bottom: 35px;
-        }
-
-        .word-class {
-            font-family: 'Arial', sans-serif;
-            font-style: italic;
-            color: var(--dict-red);
+        /* The Heritage Espresso Shadow Effect */
+        .heritage-shadow {
+            font-size: var(--title-font-size);
             font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: lowercase;
-        }
-
-        .def-num {
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #000;
-        }
-
-        .definition {
-            font-size: 1.2rem;
-            line-height: 1.5;
-            display: inline;
-        }
-
-        .example-box {
-            display: block;
-            margin: 12px 0 0 25px;
-            padding-left: 15px;
-            border-left: 2px solid var(--leaf-green);
-            color: #555;
-            font-style: italic;
-        }
-
-        .etymology {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px double #ccc;
-            font-size: 0.95rem;
-            color: #444;
-            font-family: 'Arial', sans-serif;
-        }
-
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #aaa;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0;
+            text-shadow: 
+                1px 1px 0px var(--espresso-dark), 
+                2px 2px 0px var(--espresso-dark), 
+                3px 3px 0px var(--espresso-dark), 
+                4px 4px 0px var(--espresso-dark), 
+                5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .phonetic { 
+            font-style: italic; 
+            font-size: var(--phonetic-font-size);
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+        }
+
+        .dictionary-card { 
+            border: none; 
+            background: transparent; 
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: var(--heading-font-size);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #b30000; /* Subtle crimson for headings */
+            text-transform: lowercase;
+            font-style: italic;
+        }
+
+        .example-text { 
+            border-left: 3px solid var(--accent-color); 
+            padding-left: 15px; 
+            font-style: italic; 
+            display: block; 
+            margin-top: 15px; 
+            color: var(--muted-color);
+        }
+
+        .btn-solish { 
+            background-color: var(--text-color); 
+            color: white; 
+            border-radius: 0; 
+            padding: 10px 24px; 
+            font-size: 14px; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-solish:hover { 
+            background-color: var(--accent-color); 
+            color: white; 
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            :root { --title-font-size: 3.5rem; }
+            .hero-section { padding: 80px 0; }
         }
     </style>
 </head>
 <body>
 
-    <a href="mailto:hello@solish.com" class="contact-link">Get in touch</a>
+<div class="container-fluid p-0">
+    <!-- Header -->
+    <header class="text-center hero-section">
+        <div class="container">
+            <h1 class="heritage-shadow">Sol-ish</h1>
+            <p class="phonetic" aria-label="Pronunciation">/ˈsɒlɪʃ/</p>
+            <p class="lead mt-3">A self-designated nationality of the heart.</p>
+        </div>
+    </header>
+</div>
 
-    <div class="dictionary-card">
-        <header>
-            <h1>solish</h1>
-            <div class="pronunciation">/ˈsəʊlɪʃ/</div>
-        </header>
-
-        <div class="entry">
-            <span class="def-num">1.</span>
-            <span class="word-class">noun (plural)</span>
-            <p class="definition"><b>The Solish.</b> The collective inhabitants of the Metropolitan Borough. A community known for balancing industrial heritage with a deep love for suburban greenery.</p>
-            <div class="example-box">"The Solish are famous for their polite queues and perfectly timed morning walks."</div>
+<div class="container my-5">
+    <!-- Definitions Grid -->
+    <div class="row g-5">
+        <!-- 1. Adjective -->
+        <div class="col-md-4">
+            <div class="dictionary-card">
+                <h3 class="card-title">1. adjective</h3>
+                <p>Used by those who feel a distinct cultural separation from 'Brummie' or 'Warwickshire' identities.</p>
+                <span class="example-text">"I've lived in Shirley for twenty years; I've become entirely Solish."</span>
+            </div>
         </div>
 
-        <div class="entry">
-            <span class="def-num">2.</span>
-            <span class="word-class">adjective</span>
-            <p class="definition">Describing the <b>geographic sweet spot</b> where the urban pulse of the West Midlands fades into the quiet lanes of Warwickshire.</p>
-            <div class="example-box">"It’s not quite city, not quite country—it’s very Solish."</div>
+        <!-- 2. Proper Noun -->
+        <div class="col-md-4">
+            <div class="dictionary-card">
+                <h3 class="card-title">2. proper noun</h3>
+                <p>The local dialect. A refined version of English that swaps slang for understated politeness and local knowledge.</p>
+                <span class="example-text">"You could tell he spoke Solish by the way he pronounced 'St. Alphege' with such reverence."</span>
+            </div>
         </div>
 
-        <div class="entry">
-            <span class="def-num">3.</span>
-            <span class="word-class">noun (uncountable)</span>
-            <p class="definition"><b>Solish Style.</b> An aesthetic of 'Town in the Country' (Urbs in Rure). It involves well-kept borders, classic Tudor timbering, and effortless local pride.</p>
-            <div class="example-box">"The way they renovated that old manor house was incredibly Solish."</div>
+        <!-- 3. Verb -->
+        <div class="col-md-4">
+            <div class="dictionary-card">
+                <h3 class="card-title">3. verb [intransitive]</h3>
+                <p>To be in a state of total harmony with the borough's rhythm—feeling settled, calm, and perfectly placed.</p>
+                <span class="example-text">"After a coffee in Touchwood and a walk in the park, I'm finally feeling Solish."</span>
+            </div>
         </div>
-
-        <div class="entry">
-            <span class="def-num">4.</span>
-            <span class="word-class">adjective (identity)</span>
-            <p class="definition">A self-designated <b>nationality of the heart</b>. Used by those who feel a distinct cultural separation from 'Brummie' or 'Warwickshire' identities.</p>
-            <div class="example-box">"I’ve lived in Shirley for twenty years; I’ve become entirely Solish."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">5.</span>
-            <span class="word-class">proper noun</span>
-            <p class="definition">The <b>local dialect</b>. A refined version of English that swaps slang for understated politeness and local knowledge of hidden gems.</p>
-            <div class="example-box">"You could tell he spoke Solish by the way he pronounced 'St. Alphege' with such reverence."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">6.</span>
-            <span class="word-class">verb [intransitive]</span>
-            <p class="definition">To be in a <b>state of total harmony</b> with the borough's rhythm—feeling settled, calm, and perfectly placed.</p>
-            <div class="example-box">"After a coffee in Touchwood and a walk in the park, I’m finally feeling Solish."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">7.</span>
-            <span class="word-class">adjective</span>
-            <p class="definition">Relating to the <b>engineering excellence</b> of the region, specifically the spirit of Land Rover and local innovation.</p>
-            <div class="example-box">"There is a Solish sturdiness to the way this machinery is built."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">8.</span>
-            <span class="word-class">adverb</span>
-            <p class="definition">A <b>flexible measurement</b> of location or time. Not exactly Solihull, but close enough to count.</p>
-            <div class="example-box">"I don't live in the town centre, I live Solish—down toward the south edge."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">9.</span>
-            <span class="word-class">noun</span>
-            <p class="definition">A <b>mindset</b> of quiet ambition. The Solish way of achieving success without making a loud fuss about it.</p>
-            <div class="example-box">"He approached the project with a typical Solish diligence."</div>
-        </div>
-
-        <div class="entry">
-            <span class="def-num">10.</span>
-            <span class="word-class">determiner</span>
-            <p class="definition"><b>All things Solish.</b> A catch-all term for the unique atmosphere of the B91-B95 postcodes that cannot be found anywhere else.</p>
-            <div class="example-box">"It was a weekend of everything Solish: good food, green parks, and great company."</div>
-        </div>
-
-        <div class="etymology">
-            <b>ORIGIN:</b> A modern evolution of the Silhillian spirit. From <i>Soli</i> (local affection) + <i>-ish</i> (British flexibility).
-        </div>
-
-        <footer>
-            © 2026 THE SOLISH LEXICON — BRIDGING TOWN AND COUNTRY
-        </footer>
     </div>
 
+    <!-- CTA Section -->
+    <section class="text-center mt-5 pt-5">
+        <hr class="w-25 mx-auto mb-5">
+        <a href="mailto:yourname@example.com" class="btn-solish">Contact me in a Solish way</a>
+    </section>
+</div>
+
+<footer class="text-center py-5 text-muted border-top mt-5">
+    <small>Refined British Culture | Solihull</small>
+</footer>
 
 </body>
 </html>
