@@ -45,5 +45,10 @@ The "Contact" pop-up uses a QR code generated via an API. To update where this c
 2. **Ensure** your `images` folder contains your header photo (e.g., `solishheader.jpg`).
 3. **Open** `index.html` in any modern web browser to view the site.
 
+## 🚀 How it Works
+1. The visitor clicks the **"BE SOL-ISH... DROP A MESSAGE"** button.
+2. The Bootstrap Modal appears with the phrase: *"Do get in touch if you fancy a chat or have a question. I'm all ears. Cheers!"*
+3. On submission, the form data is sent to a dedicated Worker endpoint.
+4. The Worker validates the data and sends a notification via the Cloudflare Email API.
 ---
 *Refined British Culture | Created for the settled hearts of Solihull.*
