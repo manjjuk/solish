@@ -1,54 +1,55 @@
-# Sol-ish | Pride and Peace
-A refined, heritage-inspired single-page website dedicated to the unique cultural identity of Solihull. This project serves as a "digital dictionary" for the term *Sol-ish*, capturing the essence of the borough through elegant typography and a clean, British aesthetic.
+# Sol-ish | Pride and Peace V6.0 - 02 May 2026
+
+A refined, heritage-inspired single-page website dedicated to the unique cultural identity of Solihull. This project serves as a dynamic "digital dictionary" for the term *Sol-ish*, capturing the essence of the borough through elegant typography, clean British design, and an interactive family contact portal.
 
 ## 🌟 Key Features
-* **Heritage Branding:** Features a custom "Heritage Espresso Shadow" text effect for a classic, high-end feel.
-* **Dictionary Layout:** A responsive 3-column grid explaining "Sol-ish" as an adjective, noun, and verb.
-* **Interactive Modal:** A "Contact me in a Sol-ish way" button that triggers a modern Bootstrap modal with a QR code.
-* **Responsive Design:** Fully optimised for mobile devices using Bootstrap 5 and custom Media Queries.
+* **Heritage Branding:** Features a custom "Heritage Espresso Shadow" 3D text effect for a classic, high-end British feel.
+* **Dynamic Dictionary Layout:** A responsive 3-column grid driven entirely by JavaScript, explaining "Sol-ish" as an adjective, noun, and verb.
+* **Intelligent Family Email Portal:** A contact form inside a Bootstrap modal featuring 3 distinct submission buttons. It automatically routes messages to different family members via Cloudflare back-end microservices.
+* **Modern Async Form Handling:** Submits data in the background using JavaScript `fetch()`, giving live visual feedback ("SENDING...") and smoothly closing the modal without reloading the page.
+* **Responsive Architecture:** Fully optimised for mobile devices using the latest Bootstrap framework distribution and custom Media Queries.
 
 ## 🛠️ Built With
-* **HTML5:** Structured with semantic tags for accessibility.
-* **CSS3 (Custom Properties):** Utilising CSS variables (`:root`) for easy global styling.
-* **Bootstrap 5:** Used for the grid system, spacing, and modal components.
-* **Google Fonts / Web Safe Fonts:** Styled with 'Georgia' for a traditional serif feel.
+* **HTML5:** Modular markup structured with unique target hooks for dynamic content insertion.
+* **CSS3 (Custom Properties):** Clean separation of styles into an external sheet utilizing CSS variables (`:root`) for instant theme management.
+* **Bootstrap 5.3.8:** Powered by the latest production version of Bootstrap for cutting-edge component layout and stability.
+* **JavaScript (ES6+):** Pure vanilla JS handling dynamic interface creation and secure API payload transmissions.
+* **Cloudflare Workers & Email Routing:** A lightweight serverless backend handling validation, security headers, and direct inbox deliveries.
 
-## 🎨 Customisation Guide
-This project uses **CSS Variables** located at the top of the `index.html` file within the `<style>` tag. This makes it very easy to change the look of the entire site in one place.
-
-### 1. Changing the Fonts
-Look for the `--main-font-family` variable. 
-* **To change:** Swap `'Georgia', serif` for another font like `'Arial', sans-serif` or a Google Font link.
-
-### 2. Adjusting Text Sizes
-You can scale the typography by changing these variables:
-* `--base-font-size`: Controls the standard paragraph text (currently `20px`).
-* `--title-font-size`: Controls the large "Sol-ish" header (currently `6rem`).
-
-### 3. Updating Colours
-To change the colour scheme, update the Hex codes in the `:root` section:
-* **Background:** Change `--bg-color` (currently a cream `#fdfcf0`).
-* **Accents:** Change `--accent-color` to move away from the "St. Alphege Green" (currently `#7a8d7a`).
-
-### 4. The Heritage Shadow Effect
-The 3D effect on the main header is created by stacking multiple shadows. To adjust the thickness or depth, look for the `.heritage-shadow` class:
-* **To make it deeper:** Add more lines to the `text-shadow` property (e.g., adding `6px 6px 0px var(--espresso-dark)`).
-* **To change the shadow colour:** Update the `--espresso-dark` variable (currently `#3c2f2f`).
-
-### 5. Updating the Contact Email & QR Code
-The "Contact" pop-up uses a QR code generated via an API. To update where this code sends people:
-* **The Email Address:** Locate the `<img>` tag inside the `modal-body`. Look for the `data=mailto:` section in the URL. 
-* **To Update:** Simply replace `seeyou@touchwood.coffee-shop` with your preferred email address. The QR code will automatically update to link to your new address.
-
-## 🚀 How to View Locally
-1. **Download** the `index.html` file and the `images` folder.
-2. **Ensure** your `images` folder contains your header photo (e.g., `solishheader.jpg`).
-3. **Open** `index.html` in any modern web browser to view the site.
-
-## 🚀 How it Works
-1. The visitor clicks the **"BE SOL-ISH... DROP A MESSAGE"** button.
-2. The Bootstrap Modal appears with the phrase: *"Do get in touch if you fancy a chat or have a question. I'm all ears. Cheers!"*
-3. On submission, the form data is sent to a dedicated Worker endpoint.
-4. The Worker validates the data and sends a notification via the Cloudflare Email API.
 ---
-*Refined British Culture | Created for the settled hearts of Solihull.*
+
+## 📂 Project Architecture
+The project is split into three clean files for ease of maintenance:
+
+1. **`index.html`** - The skeletal structure. Contains layout blocks, the pop-up modal configuration, and references external scripts. You rarely need to touch this.
+2. **`style.css`** - The presentation layer. Houses layout rules, variables, responsiveness overrides, and typography definitions.
+3. **`content.js`** - **Your Control Panel.** Houses all user-facing dictionary definitions, family member details, and form transmission code.
+
+---
+
+## 🎨 Layout & Design Management (`style.css`)
+Global visual styles are governed by CSS Variables located at the top of the `style.css` file. 
+
+* **Typography Customisation:** Swap out the font style or load new typefaces by modifying the `--main-font-family` property (currently `'Georgia', serif`).
+* **Scale Adjustment:** Adjust the relative sizes of text globally across screen spaces by altering `--base-font-size` and `--title-font-size`.
+* **Colour Themes:** Transform the atmosphere instantly by replacing HEX codes in the root variables:
+  * `--bg-color`: The primary foundation background shade (currently warm cream `#fdfcf0`).
+  * `--accent-color`: The corporate branding highlight color (currently "St. Alphege Green" `#7a8d7a`).
+  * `--espresso-dark`: The deep shadow core backing the headers (currently `#3c2f2f`).
+
+---
+
+## 🚀 Post-Launch Updates Guide (`content.js`)
+When your website is live on the internet, **`content.js` is the only file you need to edit** to keep things up to date.
+
+### 1. Updating Dictionary Terms
+To add a new definition or change existing text, edit the `DICTIONARY_DEFINITIONS` array block. The system will automatically compute and layout the elements across your grid using a `.map()` loop.
+
+### 2. Managing Family Members & Buttons
+To add or remove an email submission button, simply update the entries in the `FAMILY_MEMBERS` array:
+```javascript
+const FAMILY_MEMBERS = [
+    { id: "man", name: "Man" },
+    { id: "judy", name: "Judy" },
+    { id: "gabriel", name: "Gabriel" }
+];

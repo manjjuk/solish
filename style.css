@@ -1,0 +1,121 @@
+/* --- GLOBAL STYLE CONTROLS --- */
+:root {
+    --main-font-family: 'Georgia', serif;
+    --base-font-size: 20px;
+    --title-font-size: 6rem;
+    --heading-font-size: 1.2rem;
+    --phonetic-font-size: 1.9rem;
+    --bg-color: #fdfcf0;
+    --text-color: #2c2c2c;
+    --accent-color: #7a8d7a; /* St. Alphege green */
+    --muted-color: #6c757d;
+    --espresso-dark: #3c2f2f; /* Foundation for the heritage shadow */
+}
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: var(--main-font-family); 
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+}
+
+.hero-section { 
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/solishheader.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 140px 0; 
+    color: white;
+    border-bottom: none;
+}
+
+/* The Heritage Espresso Shadow Effect */
+.heritage-shadow {
+    font-size: var(--title-font-size);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0;
+    text-shadow: 
+        1px 1px 0px var(--espresso-dark), 
+        2px 2px 0px var(--espresso-dark), 
+        3px 3px 0px var(--espresso-dark), 
+        4px 4px 0px var(--espresso-dark), 
+        5px 5px 15px rgba(0,0,0,0.6);
+}
+
+.phonetic { 
+    font-style: italic; 
+    font-size: var(--phonetic-font-size);
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+}
+
+.dictionary-card { 
+    border: none; 
+    background: transparent; 
+    padding: 20px;
+}
+
+.card-title {
+    font-size: var(--heading-font-size);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #b30000; /* Subtle crimson for headings */
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+.example-text { 
+    border-left: 3px solid var(--accent-color); 
+    padding-left: 15px; 
+    font-style: italic; 
+    display: block; 
+    margin-top: 15px; 
+    color: var(--muted-color);
+}
+
+.btn-solish { 
+    background-color: var(--text-color); 
+    color: white; 
+    border-radius: 0; 
+    padding: 10px 24px; 
+    font-size: 14px; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-solish:hover { 
+    background-color: var(--accent-color); 
+    color: white; 
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Modal Styling overrides */
+.modal-content {
+    background-color: #fdfcf0; 
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #2B1E16; 
+    color: #ffffff; 
+    border-bottom: none;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px;
+}
+
+/* Mobile Responsiveness Rules */
+@media (max-width: 768px) {
+    :root { --title-font-size: 3.5rem; }
+    .hero-section { padding: 80px 0; }
+}
