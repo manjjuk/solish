@@ -1,55 +1,40 @@
-# Sol-ish | Pride and Peace V6.0 - 02 May 2026
+# Solish | Pride and Peace - V2.0 - 06 June 2026
 
-A refined, heritage-inspired single-page website dedicated to the unique cultural identity of Solihull. This project serves as a dynamic "digital dictionary" for the term *Sol-ish*, capturing the essence of the borough through elegant typography, clean British design, and an interactive family contact portal.
+A bespoke, lightweight web project celebrating the refined "Sol-ish" identity—a local culture and dialect distinct from Brummie or Warwickshire. It serves as a digital postcode for settled hearts, representing pride and peace.
 
-## 🌟 Key Features
-* **Heritage Branding:** Features a custom "Heritage Espresso Shadow" 3D text effect for a classic, high-end British feel.
-* **Dynamic Dictionary Layout:** A responsive 3-column grid driven entirely by JavaScript, explaining "Sol-ish" as an adjective, noun, and verb.
-* **Intelligent Family Email Portal:** A contact form inside a Bootstrap modal featuring 3 distinct submission buttons. It automatically routes messages to different family members via Cloudflare back-end microservices.
-* **Modern Async Form Handling:** Submits data in the background using JavaScript `fetch()`, giving live visual feedback ("SENDING...") and smoothly closing the modal without reloading the page.
-* **Responsive Architecture:** Fully optimised for mobile devices using the latest Bootstrap framework distribution and custom Media Queries.
+This project has been carefully crafted using pure HTML, CSS, and Vanilla JavaScript, ensuring an exceptionally fast load time and zero reliance on heavy external frameworks like Bootstrap.
 
-## 🛠️ Built With
-* **HTML5:** Modular markup structured with unique target hooks for dynamic content insertion.
-* **CSS3 (Custom Properties):** Clean separation of styles into an external sheet utilizing CSS variables (`:root`) for instant theme management.
-* **Bootstrap 5.3.8:** Powered by the latest production version of Bootstrap for cutting-edge component layout and stability.
-* **JavaScript (ES6+):** Pure vanilla JS handling dynamic interface creation and secure API payload transmissions.
-* **Cloudflare Workers & Email Routing:** A lightweight serverless backend handling validation, security headers, and direct inbox deliveries.
+## | Key Features
 
----
+* **Framework-Free Responsive Design:** Fully rebuilt using modern CSS Flexbox, ensuring perfect alignment and responsiveness across mobile devices, tablets, and desktop displays.
+* **Bespoke Aesthetics:** Features a classic design language, utilising a 'Georgia' serif font, a distinct 'St. Alphege green' accent colour, and smooth, pill-shaped buttons for a modern yet heritage feel.
+* **Dynamic Content Injection:** The JavaScript runtime engine automatically populates the dictionary grid and the contact form buttons from central data arrays, making future updates incredibly straightforward.
+* **Custom Modal System:** A lightweight, pure CSS and JavaScript modal handles the contact form overlay, providing a seamless user experience without page reloads.
+* **Serverless Integration:** The contact form is designed to connect asynchronously to a Cloudflare Worker, allowing for secure and efficient message handling.
 
-## 📂 Project Architecture
-The project is split into three clean files for ease of maintenance:
+## | File Structure
 
-1. **`index.html`** - The skeletal structure. Contains layout blocks, the pop-up modal configuration, and references external scripts. You rarely need to touch this.
-2. **`style.css`** - The presentation layer. Houses layout rules, variables, responsiveness overrides, and typography definitions.
-3. **`content.js`** - **Your Control Panel.** Houses all user-facing dictionary definitions, family member details, and form transmission code.
+The project is cleanly divided into three core files:
 
----
+* `index.html`: The main structural document, featuring semantic HTML5 tags and the foundation for the bespoke modal interface.
+* `style.css`: The global style controls. It manages all custom properties (CSS variables), Flexbox layouts, typography, and responsive media queries. 
+* `content.js`: The runtime core engine. It handles the dynamic rendering of the dictionary definitions, manages the modal's open/close behaviour, and processes the asynchronous network requests for the form submission.
 
-## 🎨 Layout & Design Management (`style.css`)
-Global visual styles are governed by CSS Variables located at the top of the `style.css` file. 
+## ⚙️ Configuration & Setup
 
-* **Typography Customisation:** Swap out the font style or load new typefaces by modifying the `--main-font-family` property (currently `'Georgia', serif`).
-* **Scale Adjustment:** Adjust the relative sizes of text globally across screen spaces by altering `--base-font-size` and `--title-font-size`.
-* **Colour Themes:** Transform the atmosphere instantly by replacing HEX codes in the root variables:
-  * `--bg-color`: The primary foundation background shade (currently warm cream `#fdfcf0`).
-  * `--accent-color`: The corporate branding highlight color (currently "St. Alphege Green" `#7a8d7a`).
-  * `--espresso-dark`: The deep shadow core backing the headers (currently `#3c2f2f`).
+### 1. Local Development
+To view and work on the site locally, simply open the `index.html` file in any modern web browser. No complex build tools or local servers are strictly required for the front-end interface.
 
----
+### 2. Updating Content
+If you need to add new Solish phrases or update family members, simply open `content.js` and modify the configuration arrays at the top of the file:
+* **`DICTIONARY_DEFINITIONS`**: Add or edit the title, text, and example fields to update the main page grid.
+* **`FAMILY_MEMBERS`**: Update the IDs and names to change who the contact form can be sent to.
 
-## 🚀 Post-Launch Updates Guide (`content.js`)
-When your website is live on the internet, **`content.js` is the only file you need to edit** to keep things up to date.
+### 3. Connecting the Cloudflare Worker
+Before pushing the site live, you must update the API endpoint in `content.js` to ensure the contact form successfully delivers messages. 
+* Locate the following line in `content.js`:
+  `const WORKER_URL = 'https://solish-form-handler.your-subdomain.workers.dev';`
+* Replace the placeholder string with ta live Cloudflare Worker URL.
 
-### 1. Updating Dictionary Terms
-To add a new definition or change existing text, edit the `DICTIONARY_DEFINITIONS` array block. The system will automatically compute and layout the elements across your grid using a `.map()` loop.
-
-### 2. Managing Family Members & Buttons
-To add or remove an email submission button, simply update the entries in the `FAMILY_MEMBERS` array:
-```javascript
-const FAMILY_MEMBERS = [
-    { id: "man", name: "Man" },
-    { id: "judy", name: "Judy" },
-    { id: "gabriel", name: "Gabriel" }
-];
+## 🛠️ Browser Support
+This project uses native CSS Flexbox and ES6 JavaScript. It is fully supported by all modern browsers, including Safari, Chrome, Edge, and Firefox.

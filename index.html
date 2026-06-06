@@ -4,75 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Solish | Pride and Peace</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="container-fluid p-0">
-    <header class="text-center hero-section">
-        <div class="container">
+    <header class="hero-section">
+        <div class="hero-content">
             <h1 class="heritage-shadow">Sol-ish</h1>
             <p class="phonetic" aria-label="Pronunciation">/ˈsɒl.ɪʃ /</p>
-            <p class="lead mt-3">A postcode for the settled hearts: Pride and Peace</p>
+            <p class="lead">A postcode for the settled hearts: Pride and Peace</p>
+            <button type="button" class="btn btn-outline-light" id="openModalBtn">
+                Contact a Solishman
+            </button>
         </div>
     </header>
-</div>
 
-<div class="container my-5">
-    <div id="definitionGrid" class="row g-5"></div>
+    <main class="container my-5">
+        <div id="definitionGrid" class="dictionary-grid"></div>
+    </main>
 
-    <section class="text-center mt-5">
-        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#qrModal">
-            CONTACT ME IN A SOLISH WAY
-        </button>
-    </section>
-</div>
-
-<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background-color: var(--bg-color); border: 2px solid var(--espresso-dark);">
-            <div class="modal-header border-0">
-                <h5 class="modal-title" id="qrModalLabel" style="color: var(--accent-color); font-weight: bold;">Be Sol-ish ... Drop Message</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-overlay" id="qrModal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">The Community Board</h5>
+                <button type="button" class="btn-close" id="closeModalBtn" aria-label="Close">×</button>
             </div>
             <div class="modal-body">
-                <p class="text-muted small mb-4">Do get in touch if you fancy a chat. I'm all ears. Cheers!</p>
+                <p class="form-label small">Show your Solishmanship – Leave a kindly message for your neighbors.</p>
                 
                 <form id="solishForm">
-                    <div class="mb-3 text-start">
-                        <label for="name" class="form-label small uppercase">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-control" style="border-radius: 0; border: 1px solid var(--accent-color);" required>
-                    </div>
-                    <div class="mb-3 text-start">
-                        <label for="email" class="form-label small">Your Email</label>
-                        <input type="email" id="email" name="email" class="form-control" style="border-radius: 0; border: 1px solid var(--accent-color);" required>
-                    </div>
-                    <div class="mb-3 text-start">
+                    <div class="form-group">
                         <label for="message" class="form-label small">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="4" style="border-radius: 0; border: 1px solid var(--accent-color);" required></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
                     </div>
-                    <div class="mb-3 text-start">
-                        <label for="sendtowho" class="form-label small uppercase">You Send Your Message to:</label>
-                    </div>
-
-                    <div class="container mt-4 px-0">
-                        <div id="familyButtonsRow" class="row g-2"></div>    
+                    
+                    <div class="form-group mt-4">
+                        <label class="form-label small">You Send Your Message to:</label>
+                        <div id="familyButtonsRow" class="button-grid"></div>    
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
 
-<footer class="text-center py-5 text-muted border-top mt-5">
-    <small>Refined British Culture | Solihull</small>
-</footer>
+    <footer class="site-footer">
+        <small>
+            <a href="https://solihulllife.org/" target="_blank">Refined British Culture</a> | 
+            <a href="https://visitsolihull.co.uk/" target="_blank">Solihull</a> | 
+            <a href="https://www.cloudflare.com/" target="_blank">Powered by Cloudflare</a>
+        </small>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="content.js"></script>
-
+    <script src="content.js"></script>
 </body>
 </html>
