@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solish | Pride and Peace</title>
+    <title>Solish | Sort Of Legendary-ish</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -11,11 +11,9 @@
     <header class="hero-section">
         <div class="hero-content">
             <h1 class="heritage-shadow">Sol-ish</h1>
-            <p class="phonetic" aria-label="Pronunciation">/ˈsɒl.ɪʃ /</p>
+            <p class="phonetic">/ˈsɒl.ɪʃ /</p>
             <p class="lead">A postcode for the settled hearts: Pride and Peace</p>
-            <button type="button" class="btn btn-outline-light" id="openModalBtn">
-                Contact a Solishman
-            </button>
+            <button type="button" class="btn btn-outline-light" id="openModalBtn">Contact a Solishman</button>
         </div>
     </header>
 
@@ -23,33 +21,72 @@
         <div id="definitionGrid" class="dictionary-grid"></div>
     </main>
 
-    <div class="modal-overlay" id="qrModal" aria-hidden="true">
+    <div id="formModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">The Community Board</h5>
-                <button type="button" class="btn-close" id="closeModalBtn" aria-label="Close">×</button>
+                <button type="button" class="btn-close" id="closeFormBtn">×</button>
             </div>
             <div class="modal-body">
-                <p class="form-label small">Show your Solishmanship – Leave a kindly message for your neighbors.</p>
-                
-                <form id="solishForm">
-                    <div class="form-group">
-                        <label for="message" class="form-label small">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
-                    </div>
-                    
-                    <div class="form-group mt-4">
-                        <label class="form-label small">You Send Your Message to:</label>
-                        <div id="familyButtonsRow" class="button-grid"></div>    
-                    </div>
-                </form>
+                <p class="text-muted small">Show your Solishmanship – Leave a kindly message.</p>
+
+
+
+
+
+
+
+
+
+<form id="solishForm" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Replace with your hidden access keys -->
+    <input type="hidden" id="web3AccessKey" name="access_key" value="">
+    
+    <div class="form-group">
+        <label class="form-label small">Name</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label small">Email</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label small">Message</label>
+        <textarea name="message" class="form-control" rows="6" required></textarea>
+    </div>
+    
+    <div class="form-group mt-4">
+        <label class="form-label small">Send to:</label>
+        <div class="button-grid">
+            <!-- Data attributes store the specific key for each person -->
+            <button type="submit" data-key="b99449e6-65e3-406e-bae8-7eab00e56ee7" class="btn btn-outline-dark submit-btn">Man</button>
+            <button type="submit" data-key="96efc7a9-ff13-4daa-b601-1b8c93985369" class="btn btn-outline-dark submit-btn">Judy</button>
+            <button type="submit" data-key="d720cca3-08f3-4906-81bd-09aedd84b72c" class="btn btn-outline-dark submit-btn">Gabriel</button>
+        </div>
+    </div>
+</form>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">About Sol-ish</h5>
+                <button type="button" class="btn-close" id="closeAboutBtn">×</button>
+            </div>
+            <div class="modal-body">
+                <p>The Solish village in Solihull is tucked away somewhere between Brummie and Warwick, yet it feels entirely different from both. Here, the only Solishmen in this Solish nation are the Father, the Holy Mother, and the Son—the Solish trinity who make their home here. We speak Solish, we behave in a Solish way, and we live like true Solish folk. In British culture, "<span style="color: red;">-ish</span>" is the glue that holds everything together. It is our polite, slightly cheeky way of saying something isn’t quite precise, without having to make a scene. In many ways, life is often better when you don't insist on being too precise.</p>
             </div>
         </div>
     </div>
 
     <footer class="site-footer">
         <small>
-            <a href="https://solihulllife.org/" target="_blank">Refined British Culture</a> | 
+            <a href="#" id="openAboutModal">Refined Solish Culture</a> | 
             <a href="https://visitsolihull.co.uk/" target="_blank">Solihull</a> | 
             <a href="https://www.cloudflare.com/" target="_blank">Powered by Cloudflare</a>
         </small>

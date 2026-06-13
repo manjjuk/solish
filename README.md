@@ -1,40 +1,33 @@
-# Solish | Pride and Peace - V2.0 - 06 June 2026
+# Sol-ish | Pride and Peace - V3.0 - 13 June 2026
 
-A bespoke, lightweight web project celebrating the refined "Sol-ish" identity—a local culture and dialect distinct from Brummie or Warwickshire. It serves as a digital postcode for settled hearts, representing pride and peace.
+A bespoke, lightweight web project celebrating the refined "Sol-ish" identity. It serves as a digital postcode for settled hearts, representing pride and peace in the Solihull area.
 
-This project has been carefully crafted using pure HTML, CSS, and Vanilla JavaScript, ensuring an exceptionally fast load time and zero reliance on heavy external frameworks like Bootstrap.
+This project is built using pure HTML5, CSS3, and Vanilla JavaScript for optimal performance, ensuring fast load times without the bloat of heavy external frameworks.
 
 ## | Key Features
 
-* **Framework-Free Responsive Design:** Fully rebuilt using modern CSS Flexbox, ensuring perfect alignment and responsiveness across mobile devices, tablets, and desktop displays.
-* **Bespoke Aesthetics:** Features a classic design language, utilising a 'Georgia' serif font, a distinct 'St. Alphege green' accent colour, and smooth, pill-shaped buttons for a modern yet heritage feel.
-* **Dynamic Content Injection:** The JavaScript runtime engine automatically populates the dictionary grid and the contact form buttons from central data arrays, making future updates incredibly straightforward.
-* **Custom Modal System:** A lightweight, pure CSS and JavaScript modal handles the contact form overlay, providing a seamless user experience without page reloads.
-* **Serverless Integration:** The contact form is designed to connect asynchronously to a Cloudflare Worker, allowing for secure and efficient message handling.
+* **Dual-Modal Architecture**: Features separate, independent modal overlays: one for the interactive community messaging form and one for cultural context.
+* **Web3Forms Integration**: Securely routes messages to specific recipients ("Man", "Judy", "Gabriel") using individualized API keys injected dynamically upon selection.
+* **Responsive Layout**: Uses CSS Flexbox for seamless adaptation across mobile, tablet, and desktop displays.
+* **Dynamic Rendering**: Automatically populates the dictionary grid from a central configuration array in `content.js`, simplifying content updates.
+* **Framework-Free**: Zero dependencies, relying on native ES6 JavaScript and CSS variables for maintainability.
 
 ## | File Structure
 
-The project is cleanly divided into three core files:
-
-* `index.html`: The main structural document, featuring semantic HTML5 tags and the foundation for the bespoke modal interface.
-* `style.css`: The global style controls. It manages all custom properties (CSS variables), Flexbox layouts, typography, and responsive media queries. 
-* `content.js`: The runtime core engine. It handles the dynamic rendering of the dictionary definitions, manages the modal's open/close behaviour, and processes the asynchronous network requests for the form submission.
+* `index.html`: The structural foundation, housing the two modal containers, form fields, and hero section.
+* `style.css`: Manages custom CSS variables, modal visibility via the `.active` class, and all responsive layout logic.
+* `content.js`: The runtime engine managing dictionary rendering, the two-modal toggle logic, and dynamic Web3Forms key injection.
 
 ## ⚙️ Configuration & Setup
 
-### 1. Local Development
-To view and work on the site locally, simply open the `index.html` file in any modern web browser. No complex build tools or local servers are strictly required for the front-end interface.
+### 1. Updating Content
+* **Dictionary**: Modify the `DICTIONARY_DEFINITIONS` array in `content.js` to add or update character cards.
+* **About Content**: Static text for the "Refined British Culture" modal is managed directly in `index.html` within the `aboutModal` container.
 
-### 2. Updating Content
-If you need to add new Solish phrases or update family members, simply open `content.js` and modify the configuration arrays at the top of the file:
-* **`DICTIONARY_DEFINITIONS`**: Add or edit the title, text, and example fields to update the main page grid.
-* **`FAMILY_MEMBERS`**: Update the IDs and names to change who the contact form can be sent to.
+### 2. Web3Forms Integration
+To route messages correctly, you must update the `data-key` attributes in `index.html`:
+* Locate the submission buttons inside the `solishForm` in `index.html`.
+* Replace `YOUR_KEY_FOR_MAN`, `YOUR_KEY_FOR_JUDY`, and `YOUR_KEY_FOR_GABRIEL` with your actual Web3Forms API keys.
 
-### 3. Connecting the Cloudflare Worker
-Before pushing the site live, you must update the API endpoint in `content.js` to ensure the contact form successfully delivers messages. 
-* Locate the following line in `content.js`:
-  `const WORKER_URL = 'https://solish-form-handler.your-subdomain.workers.dev';`
-* Replace the placeholder string with ta live Cloudflare Worker URL.
-
-## 🛠️ Browser Support
-This project uses native CSS Flexbox and ES6 JavaScript. It is fully supported by all modern browsers, including Safari, Chrome, Edge, and Firefox.
+### 3. Deployment
+Simply open `index.html` in any modern browser to preview changes. The site is compatible with all modern browsers (Chrome, Firefox, Edge, Safari) due to its use of native web standards.
