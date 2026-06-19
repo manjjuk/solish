@@ -1,4 +1,4 @@
-# Sol-ish | Pride and Peace - V3.0 - 13 June 2026
+# Sol-ish | Pride and Peace - V3.1 - 19 June 2026
 
 A bespoke, lightweight web project celebrating the refined "Sol-ish" identity. It serves as a digital postcode for settled hearts, representing pride and peace in the Solihull area.
 
@@ -11,6 +11,7 @@ This project is built using pure HTML5, CSS3, and Vanilla JavaScript for optimal
 * **Responsive Layout**: Uses CSS Flexbox for seamless adaptation across mobile, tablet, and desktop displays.
 * **Dynamic Rendering**: Automatically populates the dictionary grid from a central configuration array in `content.js`, simplifying content updates.
 * **Framework-Free**: Zero dependencies, relying on native ES6 JavaScript and CSS variables for maintainability.
+* **Modal(About)**: Add an image, updating .modal-img in CSS
 
 ## | File Structure
 
