@@ -54,6 +54,9 @@
         <label class="form-label small">Message</label>
         <textarea name="message" class="form-control" rows="6" required></textarea>
     </div>
+
+            <!-- ADD THE HCAPTCHA CONTAINER HERE -->
+			<div class="h-captcha" data-captcha="true"></div>
     
     <div class="form-group mt-4">
         <label class="form-label small">Send to:</label>
@@ -94,5 +97,30 @@
     </footer>
 
     <script src="content.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <!-- Add HCAPTCHA SCRIPT here  (Before closing body tag) -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- Updated to match the form id 'contact-form' -->
+    <script>
+        const form = document.getElementById('solishForm');
+
+        form.addEventListener('submit', function(e) {
+
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+        if (!hCaptcha) {
+            e.preventDefault();
+            alert("Please fill out captcha field")
+            return
+            }
+        });
+    </script>
+
+
+
+
 </body>
 </html>
